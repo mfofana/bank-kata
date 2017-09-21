@@ -87,7 +87,7 @@ public class AccountTest {
 		
 		//When
 		//Then
-		Assertions.assertThat(account.printAllTransaction()).isEqualTo(sb.toString());
+		Assertions.assertThat(account.printTransactions()).isEqualTo(sb.toString());
 	}
 	
 

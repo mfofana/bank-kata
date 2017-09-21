@@ -42,16 +42,14 @@ public class Account {
 
 	}
 
-	public String printAllTransaction() {
+	public String printTransactions() {
 		StringBuilder sb = new StringBuilder() ;
-		for(Transaction transaction : statement.getLines()) {
-			sb.append("|")
+		this.statement.getLines().stream().forEach(transaction -> sb.append("|")
 			  .append(transaction.value()).append("|")
 			  .append(transaction.dateStringyfy("dd/MM/yyyy"))
 			  .append("|")
-			  .append(transaction.optype()).append("\n");	
+			  .append(transaction.optype()).append("\n"));
 		
-		}
 		sb.append("CURRENT BALANCE : ").append(this.currentBalance().value()).append("\n");
 		return sb.toString();
 	}
